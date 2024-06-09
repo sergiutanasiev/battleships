@@ -1,0 +1,43 @@
+#grid {
+    width: 360px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    border-top: 1px solid #1d3557;
+    border-left: 1px solid #1d3557;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#grid:hover {
+    cursor: pointer;
+}
+
+.grid_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid_cell {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #1d3557;
+    border-right: 1px solid #1d3557;
+    min-width: 35px;
+    min-height: 35px;
+    line-height: 35px;
+    color: rgba(29, 53, 87, 0.2)
+}
+
+.grid_cell.hit {
+    background-color: rgba(230, 57, 70);
+    pointer-events:none;
+    color: none;
+}
+
+.grid_cell.miss {
+    background-color: rgba(222, 226, 230);
+    pointer-events:none;
+}

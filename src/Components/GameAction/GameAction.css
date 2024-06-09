@@ -1,0 +1,22 @@
+.game-action {
+    width: 360px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.move-cell {
+    padding: 5px;
+    font-size: 18px;
+    flex: 1;
+    text-transform: uppercase;
+}
+
+.game-action .error {
+    flex: 0 0 100%;
+    color: #E63946;
+    font-size: 14px;
+    min-height: 18px;
+}
