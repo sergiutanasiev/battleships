@@ -1,7 +1,7 @@
 import {useRef, useState} from 'react';
 import './GameAction.css';
 
-const regex = /^[A-J/a-j][1-9]|10$/;
+const regex = /^[A-Ja-j](10|[1-9])$/;
 const initialActionState = new Set();
 
 const GameAction = ({handleAction}: any) => {
@@ -15,6 +15,7 @@ const GameAction = ({handleAction}: any) => {
             setError("");
             const value = inputRef.current.value;
             const isValid = regex.test(value);
+            
             if (!isValid) {
                 setIsValidInput(isValid);
                 setError('Use a valid format (A-J and a number 1-10). ex: A5');
@@ -22,7 +23,7 @@ const GameAction = ({handleAction}: any) => {
             }
             if (isValid && actionState.has(value)) {
                 setIsValidInput(!isValid);
-                setError(`${value} is already shot`);
+                setError(`${value} is a duplicated move`);
                 return;
             }
             handleAction(inputRef.current.value.toUpperCase());
@@ -33,7 +34,7 @@ const GameAction = ({handleAction}: any) => {
 
     return (
         <div className='game-action'>
-            <input maxLength={2} className='move-cell' ref={inputRef} type="text" />
+            <input maxLength={3} placeholder='Your move...ex: A5' data-testid="move-input" className='move-cell' ref={inputRef} type="text" />
             <button onClick={handleClick}>FIRE</button>
             <span className='error'>{!isValidInput && <span>{error}</span>}</span>
         </div>
