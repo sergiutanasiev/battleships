@@ -15,11 +15,6 @@ You will also see any lint errors in the console.
 
 To find the ships grid position check the console
 
-### `Double rendering ?`
-
-App is running in strict mode
-remove React.StrictMode from index.tsx
-
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

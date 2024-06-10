@@ -37,7 +37,6 @@ const Game = () => {
     setMappedShips(shipGenerator());
     setCountMoves(0);
     setCurrentMove("");
-    setMappedShips([]);
     setHitMoves(0);
     setNecessaryHitMoves(0);
     dispatch({ type: 'START_GAME' });
