@@ -30,14 +30,11 @@ const Game = () => {
   const [necessaryHitMoves, setNecessaryHitMoves] = useState<number>(0);
 
   useEffect(() => {
-    if (mappedShips.length === 0) {
-      setMappedShips(shipGenerator());
-    } else {
-      setNecessaryHitMoves(mappedShips.flat().length);
-    }
+    setNecessaryHitMoves(mappedShips.flat().length);
   }, [mappedShips]);
 
   const handleStartGame = () => {
+    setMappedShips(shipGenerator());
     setCountMoves(0);
     setCurrentMove("");
     setMappedShips([]);
